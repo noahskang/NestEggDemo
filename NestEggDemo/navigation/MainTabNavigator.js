@@ -4,13 +4,30 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import DrawerMenu from '../screens/DrawerMenu';
+import ApplianceScreen from '../screens/ApplianceScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import LogoTitle from '../components/LogoTitle';
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
-});
+const HomeStack = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Appliance: ApplianceScreen
+  },
+  {
+    navigationOptions: {
+      headerTitle: <LogoTitle />,
+      headerStyle: {
+        backgroundColor: '#ffffff',
+      },
+      headerTintColor: '#313131',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        fontFamily: 'AirbnbCereal-Light'
+      }
+    }
+    }
+);
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
@@ -25,14 +42,6 @@ HomeStack.navigationOptions = {
     />
   ),
 };
-
-const DrawerStack = createStackNavigator({
-  Menu: DrawerMenu,
-});
-
-DrawerStack.navigationOptions = {
-  
-}
 
 const LinksStack = createStackNavigator({
   Links: LinksScreen,
@@ -65,6 +74,6 @@ SettingsStack.navigationOptions = {
 export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
-  SettingsStack,
-  DrawerStack
+  SettingsStack
 });
+// we have to create multiple stacks here because we want the navigation bar to appear on ALL The pages.

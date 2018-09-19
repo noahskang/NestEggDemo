@@ -1,6 +1,4 @@
 import React from 'react';
-import { DrawerMenu } from './DrawerMenu';
-
 import {
   Image,
   Platform,
@@ -11,42 +9,69 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { WebBrowser, Ionicons } from 'expo';
-import { DrawerActions } from 'react-navigation';
+import { ListItem } from 'react-native-elements'
+import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
+const username = 'NOAH';
+const list = [
+  {
+    name: 'Amy Farha',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+    subtitle: 'Vice President'
+  },
+  {
+    name: 'Chris Jackson',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    subtitle: 'Vice Chairman'
+  },
+];
+
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    drawerLabel: 'Home',
-    drawerIcon: () => (
-     <Ionicons name="md-checkmark-circle" size={32} />
-   ),
+    header: null,
   };
-
 
   render() {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+          <View style={styles.welcomeContainer}>
+            <Image
+              source={
+                __DEV__
+                  ? require('../assets/images/robot-dev.png')
+                  : require('../assets/images/robot-prod.png')
+              }
+              style={styles.welcomeImage}
+            />
+          </View>
+
           <Button
-            onPress={() => {
-                this.props.navigation.navigate('Notifications');
-                this.props.navigation.openDrawer();
-            }}
-            title="Menu"
+            title="Go to Settings"
+            onPress={() => this.props.navigation.navigate('Settings')}
           />
-          <View style={styles.getStartedContainer}>
-            <Text style={styles.getStartedText}>5725 S Kimbark Ave.</Text>
-            <Text style={styles.getStartedText}>Apt 3</Text>
-
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
-            </View>
-
-            <Text style={styles.getStartedText}>
-              Change this text and your app will automatically reload.
-            </Text>
+          <Button
+            title="Report A Problem"
+            onPress={() => {
+                this.props.navigation.navigate('Appliance', {
+                username
+              });
+            }}
+          />
+          <View>
+            {
+              list.map((l, i) => (
+                <ListItem
+                  key={i}
+                  leftAvatar={{ source: { uri: l.avatar_url } }}
+                  title={l.name}
+                  subtitle={l.subtitle}
+                  titleStyle={styles.listItem}
+                />
+              ))
+            }
           </View>
 
           <View style={styles.helpContainer}>
@@ -105,6 +130,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    fontFamily: 'AirbnbCereal-Bold'
   },
   developmentModeText: {
     marginBottom: 20,
@@ -188,4 +214,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#2e78b7',
   },
+  listItem: {
+    fontFamily: 'AirbnbCereal-Book',
+    fontSize: 18,
+    color: '#313131'
+  }
 });

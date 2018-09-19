@@ -32,6 +32,7 @@ export default class App extends React.Component {
       Asset.loadAsync([
         require('./assets/images/robot-dev.png'),
         require('./assets/images/robot-prod.png'),
+        require('./assets/images/nestegg-icon.png'),
       ]),
       Font.loadAsync({
         // This is the font that we are using for our tab bar
@@ -39,6 +40,12 @@ export default class App extends React.Component {
         // We include SpaceMono because we use it in HomeScreen.js. Feel free
         // to remove this if you are not using it in your app
         'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
+        'AirbnbCereal-Black': require('./assets/fonts/AirbnbCereal-Black.ttf'),
+        'AirbnbCereal-Bold': require('./assets/fonts/AirbnbCereal-Bold.ttf'),
+        'AirbnbCereal-Book': require('./assets/fonts/AirbnbCereal-Book.ttf'),
+        'AirbnbCereal-ExtraBold': require('./assets/fonts/AirbnbCereal-ExtraBold.ttf'),
+        'AirbnbCereal-Light': require('./assets/fonts/AirbnbCereal-Light.ttf'),
+        'AirbnbCereal-Medium': require('./assets/fonts/AirbnbCereal-Medium.ttf'),
       }),
     ]);
   };

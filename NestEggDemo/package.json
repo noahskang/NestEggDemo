@@ -1,5 +1,5 @@
 {
-  "name": "my-new-project",
+  "name": "NestEggDemo",
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
@@ -25,5 +25,10 @@
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-react-native": "^3.3.0",
     "jest-expo": "30.0.0"
+  },
+  "rpnm": {
+    "assets": [
+      "assets/fonts/"
+    ]
   }
 }
