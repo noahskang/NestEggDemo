@@ -1,6 +1,7 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { Icon } from 'react-native-elements';
+import { createStackNavigator, createBottomTabNavigator, createDrawerNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
@@ -48,12 +49,9 @@ const LinksStack = createStackNavigator({
 });
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? `ios-link${focused ? '' : '-outline'}` : 'md-link'}
-    />
+  drawerLabel: 'LinksScreen',
+  drawerIcon: () => (
+    <Icon name='menu' />
   ),
 };
 
@@ -69,11 +67,15 @@ SettingsStack.navigationOptions = {
       name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
     />
   ),
-};
 
-export default createBottomTabNavigator({
+export default createDrawerNavigator({
   HomeStack,
   LinksStack,
   SettingsStack
-});
+})
+// export default createBottomTabNavigator({
+//   HomeStack,
+//   LinksStack,
+//   SettingsStack
+// });
 // we have to create multiple stacks here because we want the navigation bar to appear on ALL The pages.

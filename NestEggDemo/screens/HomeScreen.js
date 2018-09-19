@@ -9,24 +9,15 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { ListItem } from 'react-native-elements'
+import { ListItem, Icon } from 'react-native-elements'
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
+import HeaderComponent from '../components/HeaderComponent';
+import ListComponent from '../components/ListComponent';
+const ActionList =  require('../config/ActionList').ActionList;
 
 const username = 'NOAH';
-const list = [
-  {
-    name: 'Amy Farha',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President'
-  },
-  {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
-  },
-];
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -37,17 +28,7 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
-            <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/robot-dev.png')
-                  : require('../assets/images/robot-prod.png')
-              }
-              style={styles.welcomeImage}
-            />
-          </View>
-
+          <HeaderComponent />
           <Button
             title="Go to Settings"
             onPress={() => this.props.navigation.navigate('Settings')}
@@ -60,20 +41,9 @@ export default class HomeScreen extends React.Component {
               });
             }}
           />
-          <View>
-            {
-              list.map((l, i) => (
-                <ListItem
-                  key={i}
-                  leftAvatar={{ source: { uri: l.avatar_url } }}
-                  title={l.name}
-                  subtitle={l.subtitle}
-                  titleStyle={styles.listItem}
-                />
-              ))
-            }
-          </View>
-
+          <ListComponent listObject={ActionList.Maintenance} />
+          <ListComponent listObject={ActionList.Rent} />
+          <ListComponent listObject={ActionList.Utilities} />
           <View style={styles.helpContainer}>
             <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
               <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
@@ -213,10 +183,5 @@ const styles = StyleSheet.create({
   helpLinkText: {
     fontSize: 14,
     color: '#2e78b7',
-  },
-  listItem: {
-    fontFamily: 'AirbnbCereal-Book',
-    fontSize: 18,
-    color: '#313131'
   }
 });

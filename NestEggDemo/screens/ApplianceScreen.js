@@ -17,14 +17,6 @@ export default class ApplianceScreen extends React.Component {
     return (
       <View style={styles.welcomeContainer}>
         <Text>This is Applications Window</Text>
-        <Image
-          source={
-            __DEV__
-              ? require('../assets/images/robot-dev.png')
-              : require('../assets/images/robot-prod.png')
-          }
-          style={styles.welcomeImage}
-        />
         <Text>hello {username}!</Text>
       </View>
     )

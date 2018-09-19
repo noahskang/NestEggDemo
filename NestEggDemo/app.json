@@ -1,11 +1,14 @@
 {
   "expo": {
     "name": "NestEggDemo",
-    "description": "A very interesting project.",
+    "description": "demo of nestegg tenant experience",
     "slug": "NestEggDemo",
     "privacy": "public",
     "sdkVersion": "30.0.0",
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -22,6 +25,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "githubUrl": "https://github.com/noahskang/NestEggDemo"
   }
 }
