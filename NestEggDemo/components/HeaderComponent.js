@@ -22,7 +22,9 @@ export default class HeaderComponent extends React.Component {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 12
   },
   iconHeaderContainer: {
     flexDirection: 'column'
@@ -31,11 +33,13 @@ const styles = StyleSheet.create({
     flexDirection: 'column'
   },
   marqueeTitle: {
+    color: '#3C3C3B',
     fontFamily: 'AirbnbCereal-Bold',
-    fontSize: 35
+    fontSize: 24
   },
   marqueeSubtitle: {
-    fontFamily: 'AirbnbCereal-Book',
-    fontSize: 16
+    color: '#3C3C3B',
+    fontFamily: 'AirbnbCereal-Bold',
+    fontSize: 20
   }
 });

@@ -9,19 +9,20 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { ListItem, Icon } from 'react-native-elements'
+import { Icon, Card } from 'react-native-elements'
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 import HeaderComponent from '../components/HeaderComponent';
-import ListComponent from '../components/ListComponent';
-const ActionList =  require('../config/ActionList').ActionList;
+import CardList from '../components/CardList';
+// import ListComponent from '../components/ListComponent';
+// const ActionList =  require('../config/ActionList').ActionList;
 
 const username = 'NOAH';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    header: null,
+    title: 'Home'
   };
 
   render() {
@@ -29,21 +30,9 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <HeaderComponent />
-          <Button
-            title="Go to Settings"
-            onPress={() => this.props.navigation.navigate('Settings')}
-          />
-          <Button
-            title="Report A Problem"
-            onPress={() => {
-                this.props.navigation.navigate('Appliance', {
-                username
-              });
-            }}
-          />
-          <ListComponent listObject={ActionList.Maintenance} />
-          <ListComponent listObject={ActionList.Rent} />
-          <ListComponent listObject={ActionList.Utilities} />
+          <Image source={require('../assets/images/apt-inside.png')} />
+          <Text style={{margin: 10}}>Manage Your Apartment</Text>
+          <CardList />
           <View style={styles.helpContainer}>
             <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
               <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
@@ -51,13 +40,6 @@ export default class HomeScreen extends React.Component {
           </View>
         </ScrollView>
 
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
-          </View>
-        </View>
       </View>
     );
   }
@@ -185,3 +167,24 @@ const styles = StyleSheet.create({
     color: '#2e78b7',
   }
 });
+
+// <Button
+//   title="Go to Settings"
+//   onPress={() => this.props.navigation.navigate('Settings')}
+// />
+// <Button
+//   title="Report A Problem"
+//   onPress={() => {
+//       this.props.navigation.navigate('Appliance', {
+//       username
+//     });
+//   }}
+// />
+
+// <View style={styles.tabBarInfoContainer}>
+// <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
+//
+// <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
+// <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
+// </View>
+// </View>

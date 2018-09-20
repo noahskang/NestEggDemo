@@ -2,7 +2,7 @@ import React from 'react';
 import { ExpoConfigView } from '@expo/samples';
 import { View, StyleSheet, Image, Text } from 'react-native';
 
-export default class ApplianceScreen extends React.Component {
+export default class MaintenanceScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: 'Report A Problem',

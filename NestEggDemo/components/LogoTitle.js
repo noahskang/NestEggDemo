@@ -1,16 +1,40 @@
 import React from 'react';
-import { Text, Image, View } from 'react-native';
+import { Text, Image, View, StyleSheet } from 'react-native';
+import { Icon } from 'react-native-elements';
+import { withNavigation } from 'react-navigation';
 
-export default class LogoTitle extends React.Component {
+class LogoTitle extends React.Component {
   render() {
     return (
-      <View>
+      <View style={styles.navContainer}>
+        <View style={styles.menuContainer}>
+          <Icon name='menu' onPress={()=>this.props.navigation.openDrawer()}
+          color={styles.darkColor}
+          />
+          <Text style={{top: 3, color: styles.darkColor}}>NOAH KANG</Text>
+        </View>
         <Image
         source={require('../assets/images/nestegg-icon.png')}
-        style={{ width: 100, height: 30 }}
+        style={{ width: 70, height: 25 }}
         />
-        <Text>NOAH</Text>
       </View>
     );
-  }
+  };
 }
+
+const styles = StyleSheet.create({
+  navContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 7,
+  },
+  menuContainer: {
+    width: 150,
+    top: 1,
+    flexDirection: 'row'
+  },
+  darkColor: '#3C3C3B'
+});
+
+export default withNavigation(LogoTitle);

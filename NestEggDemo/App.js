@@ -31,6 +31,7 @@ export default class App extends React.Component {
     return Promise.all([
       Asset.loadAsync([
         require('./assets/images/nestegg-icon.png'),
+        require('./assets/images/apt-inside.png'),
       ]),
       Font.loadAsync({
         // This is the font that we are using for our tab bar
