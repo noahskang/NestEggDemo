@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Image, View, StyleSheet } from 'react-native';
+import { Text, Image, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { withNavigation } from 'react-navigation';
 
@@ -13,10 +13,11 @@ class LogoTitle extends React.Component {
           />
           <Text style={{top: 3, color: styles.darkColor}}>NOAH KANG</Text>
         </View>
+        <TouchableOpacity onPress={()=>this.props.navigation.navigate('Home')} >
         <Image
-        source={require('../assets/images/nestegg-icon.png')}
-        style={{ width: 70, height: 25 }}
-        />
+          source={require('../assets/images/nestegg-icon.png')}
+          style={{ width: 70, height: 25 }}/>
+        </TouchableOpacity>
       </View>
     );
   };

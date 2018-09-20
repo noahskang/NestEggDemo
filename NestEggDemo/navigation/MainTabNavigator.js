@@ -92,7 +92,14 @@ export const Tabs = createBottomTabNavigator({
 const DrawerNavigator = createDrawerNavigator({
   Home:{
     screen: Tabs
-  }
+  },
+  Appliances: ApplianceScreen,
+  Maintenance: MaintenanceScreen,
+  Rent: RentScreen,
+  Lease: LeaseScreen,
+  'Report A Problem': ReportProblemScreen,
+  'Make A Payment': MakePaymentScreen,
+  'Utilities': UtilitiesScreen
 },{
   initialRouteName: 'Home'
 }

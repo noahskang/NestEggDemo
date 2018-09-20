@@ -1,6 +1,7 @@
 import React from 'react';
 import { ExpoConfigView } from '@expo/samples';
 import { View, StyleSheet, Image, Text } from 'react-native';
+import MarqueeHeaderComponent from '../components/MarqueeHeaderComponent';
 import ListComponent from '../components/ListComponent';
 const ActionList =  require('../config/ActionList').ActionList;
 
@@ -22,6 +23,10 @@ export default class RentScreen extends React.Component {
     const username = navigation.getParam('username', 'Noah');
     return (
       <View style={styles.welcomeContainer}>
+        <MarqueeHeaderComponent
+          title={'Your Next Payment is Due:'}
+          subTitle={'October 12'}
+        />
         <ListComponent listObject={ActionList.Rent} />
       </View>
     )

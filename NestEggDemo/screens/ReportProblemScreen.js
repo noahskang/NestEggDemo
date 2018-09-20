@@ -14,7 +14,7 @@ export default class ReportProblemScreen extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: 'ReportProblem',
+      headerTitle: 'Report A Problem',
       headerStyle: {
         backgroundColor: '#ffffff',
         marginTop: -20
