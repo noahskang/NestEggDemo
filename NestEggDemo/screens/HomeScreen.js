@@ -30,8 +30,8 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <HeaderComponent />
-          <Image source={require('../assets/images/apt-inside.png')} />
-          <Text style={{margin: 10}}>Manage Your Apartment</Text>
+          <Image style={{bottom: 25}} source={require('../assets/images/apt-inside.png')} />
+          <Text style={styles.manageApt}>Manage Your Apartment</Text>
           <CardList />
           <View style={styles.helpContainer}>
             <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
@@ -165,6 +165,12 @@ const styles = StyleSheet.create({
   helpLinkText: {
     fontSize: 14,
     color: '#2e78b7',
+  },
+  manageApt: {
+    color: '#6D6D6D',
+    margin: 10,
+    fontFamily: 'AirbnbCereal-Medium',
+    fontSize: 18
   }
 });
 

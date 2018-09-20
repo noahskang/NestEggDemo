@@ -8,6 +8,7 @@ export default class ApplianceScreen extends React.Component {
       headerTitle: 'View My Appliances',
       headerStyle: {
         backgroundColor: '#ffffff',
+        marginTop: -20
       }
     }
   };

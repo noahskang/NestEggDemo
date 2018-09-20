@@ -8,6 +8,7 @@ export default class UtilitiesScreen extends React.Component {
       headerTitle: 'Manage Utilities',
       headerStyle: {
         backgroundColor: '#ffffff',
+        marginTop: -20
       }
     }
   };

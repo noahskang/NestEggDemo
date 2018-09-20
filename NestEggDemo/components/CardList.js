@@ -11,9 +11,9 @@ class CardList extends React.Component {
           <Card
             containerStyle={styles.cardStyle}
             imageStyle={styles.imageSize}
-            image={require('../assets/images/Appliances.png')}
+            image={require('../assets/images/Rent.png')}
           >
-            <Button buttonStyle={styles.buttonStyle} titleStyle={styles.cardTitleStyle} textStyle={styles.cardTitleStyle} title={'Appliances'} onPress={() => this.props.navigation.navigate('Appliances')} />
+            <Button buttonStyle={styles.buttonStyle} textStyle={styles.cardTitleStyle} title={'Rent'} onPress={() => this.props.navigation.navigate('Rent')} />
           </Card>
           <Card
             containerStyle={styles.cardStyle}
@@ -27,9 +27,9 @@ class CardList extends React.Component {
           <Card
             containerStyle={styles.cardStyle}
             imageStyle={styles.imageSize}
-            image={require('../assets/images/Rent.png')}
+            image={require('../assets/images/Appliances.png')}
           >
-            <Button buttonStyle={styles.buttonStyle} textStyle={styles.cardTitleStyle} title={'Rent'} onPress={() => this.props.navigation.navigate('Rent')} />
+            <Button buttonStyle={styles.buttonStyle} titleStyle={styles.cardTitleStyle} textStyle={styles.cardTitleStyle} title={'Appliances'} onPress={() => this.props.navigation.navigate('Appliances')} />
           </Card>
           <Card
             containerStyle={styles.cardStyle}
@@ -73,7 +73,8 @@ const styles = StyleSheet.create({
     height: 40,
     width: 120,
     bottom: 5,
-    right: 28
+    justifyContent: 'center',
+    right: 10
   }
 });
 

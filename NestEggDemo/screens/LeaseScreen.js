@@ -2,13 +2,13 @@ import React from 'react';
 import { ExpoConfigView } from '@expo/samples';
 import { View, StyleSheet, Image, Text } from 'react-native';
 
-export default class RentScreen extends React.Component {
+export default class LeaseScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: 'Manage Rent',
+      headerTitle: 'Lease Information',
       headerStyle: {
         backgroundColor: '#ffffff',
-        marginTop: -22
+        marginTop: -20
       }
     }
   };
@@ -21,6 +21,7 @@ export default class RentScreen extends React.Component {
     return (
       <View style={styles.welcomeContainer}>
         <Text>hello {username}!</Text>
+        <Text>Your Lease Information Will Appear Here</Text>
       </View>
     )
   }

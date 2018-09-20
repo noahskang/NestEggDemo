@@ -1,8 +1,9 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { Icon } from 'react-native-elements';
+import { withNavigation } from 'react-navigation'
 
-export default class HeaderComponent extends React.Component {
+class HeaderComponent extends React.Component {
   render() {
     return (
       <View style={styles.headerContainer}>
@@ -12,13 +13,20 @@ export default class HeaderComponent extends React.Component {
         </View>
         <View style={styles.iconHeaderContainer}>
         //https://react-native-training.github.io/react-native-elements/docs/icon.html
-          <Icon name='info' color='#24AC9B' />
-          <Icon name='message' color='#24AC9B' />
+          <Icon
+            name='info'
+            color='#24AC9B'
+            onPress={() => this.props.navigation.navigate('Lease')}/>
+          <Icon name='message'
+            color='#24AC9B'
+            onPress={() => this.props.navigation.navigate('Messages')}/>
         </View>
       </View>
     );
   }
 }
+
+export default withNavigation(HeaderComponent);
 
 const styles = StyleSheet.create({
   headerContainer: {
@@ -27,10 +35,12 @@ const styles = StyleSheet.create({
     padding: 12
   },
   iconHeaderContainer: {
-    flexDirection: 'column'
+    flexDirection: 'column',
+    bottom: 25
   },
   marqueeContainer: {
-    flexDirection: 'column'
+    flexDirection: 'column',
+    bottom: 30
   },
   marqueeTitle: {
     color: '#3C3C3B',

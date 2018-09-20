@@ -3,10 +3,16 @@ export const ActionList = {
     title: 'Maintenance',
     list: [
       {
-        name: 'Report A Problem'
+        name: 'Report A Problem',
+        route: 'ReportProblem'
       },
       {
-        name: 'View Appliance Manualså'
+        name: 'View Appliance Manuals',
+        route: 'ReportProblem'
+      },
+      {
+        name: 'View Maintenance History',
+        name: 'ReportProblem'
       },
     ]
   },

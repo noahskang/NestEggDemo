@@ -7,11 +7,29 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import ApplianceScreen from '../screens/ApplianceScreen';
 import MaintenanceScreen from '../screens/MaintenanceScreen';
+import MessagesScreen from '../screens/MessagesScreen';
 import RentScreen from '../screens/RentScreen';
 import UtilitiesScreen from '../screens/UtilitiesScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import LeaseScreen from '../screens/LeaseScreen';
+import ReportProblemScreen from '../screens/ReportProblemScreen';
 import LogoTitle from '../components/LogoTitle';
+
+const defaultHeaderNavigationOptions = {
+  headerTitle: <LogoTitle />,
+  headerStyle: {
+    backgroundColor: '#ffffff',
+    marginTop: -20,
+    height: 40,
+    borderBottomHeight: 0,
+    borderBottomColor: '#ffffff'
+  },
+  headerTintColor: '#313131',
+  headerTitleStyle: {
+    fontWeight: 'bold',
+    fontFamily: 'AirbnbCereal-Light',
+    tintColor: '#6D6D6D'
+  }
+}
 
 const HomeStack = createStackNavigator(
   {
@@ -19,21 +37,13 @@ const HomeStack = createStackNavigator(
     Appliances: ApplianceScreen,
     Maintenance: MaintenanceScreen,
     Rent: RentScreen,
+    Lease: LeaseScreen,
+    ReportProblem: ReportProblemScreen,
     Utilities: UtilitiesScreen
   },
   {
-    navigationOptions: {
-      headerTitle: <LogoTitle />,
-      headerStyle: {
-        backgroundColor: '#ffffff',
-      },
-      headerTintColor: '#313131',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-        fontFamily: 'AirbnbCereal-Light'
-      }
-    }
-    }
+    navigationOptions: defaultHeaderNavigationOptions
+  }
 );
 
 HomeStack.navigationOptions = {
@@ -54,39 +64,43 @@ HomeStack.navigationOptions = {
   ),
 };
 
-// const LinksStack = createStackNavigator({
-//   Links: LinksScreen,
-// });
-//
-// LinksStack.navigationOptions = {
-//   drawerLabel: 'LinksScreen',
-//   drawerIcon: () => (
-//     <Icon name='menu' />
-//   ),
-// };
+const MessagesStack = createStackNavigator({
+  Messages: MessagesScreen
+  },
+  {
+    navigationOptions: defaultHeaderNavigationOptions
+  }
+);
 
-// const SettingsStack = createStackNavigator({
-//   Settings: SettingsScreen,
-// });
-//
-// SettingsStack.navigationOptions = {
-//   tabBarLabel: 'Settings',
-//   tabBarIcon: ({ focused }) => (
-//     <TabBarIcon
-//       focused={focused}
-//       name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
-//     />
-//   ),
-// };
-//
-export default createDrawerNavigator({
-  HomeStack
+MessagesStack.navigationOptions = {
+  tabBarLabel: 'Messages',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? `ios-message{focused ? '' : '-outline'}` : 'md-message'}
+    />
+  ),
+};
+
+export const Tabs = createBottomTabNavigator({
+  HomeStack,
+  MessagesStack
 });
-// LinksStack,
-// SettingsStack
-// export default createBottomTabNavigator({
-//   HomeStack,
-//   LinksStack,
-//   SettingsStack
-// });
-// we have to create multiple stacks here because we want the navigation bar to appear on ALL The pages.
+
+const DrawerNavigator = createDrawerNavigator({
+  Home:{
+    screen: Tabs
+  }
+},{
+  initialRouteName: 'Home'
+}
+);
+
+const StackNavigator = createStackNavigator({
+    DrawerNavigator:{
+      screen: DrawerNavigator
+    }
+  }
+)
+
+export default StackNavigator

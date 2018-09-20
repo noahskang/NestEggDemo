@@ -7,9 +7,11 @@ const ActionList =  require('../config/ActionList').ActionList;
 export default class MaintenanceScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: 'Report A Problem',
+      headerTitle: 'Maintenance',
       headerStyle: {
         backgroundColor: '#ffffff',
+        height: 37,
+        marginTop: -20
       }
     }
   };
