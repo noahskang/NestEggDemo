@@ -12,7 +12,6 @@ import {
 import { Icon, Card } from 'react-native-elements'
 import { WebBrowser } from 'expo';
 
-import { MonoText } from '../components/StyledText';
 import HeaderComponent from '../components/HeaderComponent';
 import CardList from '../components/CardList';
 // import ListComponent from '../components/ListComponent';
@@ -135,24 +134,3 @@ const styles = StyleSheet.create({
     fontSize: 18
   }
 });
-
-// <Button
-//   title="Go to Settings"
-//   onPress={() => this.props.navigation.navigate('Settings')}
-// />
-// <Button
-//   title="Report A Problem"
-//   onPress={() => {
-//       this.props.navigation.navigate('Appliance', {
-//       username
-//     });
-//   }}
-// />
-
-// <View style={styles.tabBarInfoContainer}>
-// <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-//
-// <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-// <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
-// </View>
-// </View>
