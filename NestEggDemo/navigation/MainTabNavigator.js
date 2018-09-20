@@ -12,6 +12,7 @@ import RentScreen from '../screens/RentScreen';
 import UtilitiesScreen from '../screens/UtilitiesScreen';
 import LeaseScreen from '../screens/LeaseScreen';
 import ReportProblemScreen from '../screens/ReportProblemScreen';
+import MakePaymentScreen from '../screens/MakePaymentScreen';
 import LogoTitle from '../components/LogoTitle';
 
 const defaultHeaderNavigationOptions = {
@@ -39,6 +40,7 @@ const HomeStack = createStackNavigator(
     Rent: RentScreen,
     Lease: LeaseScreen,
     ReportProblem: ReportProblemScreen,
+    MakePayment: MakePaymentScreen,
     Utilities: UtilitiesScreen
   },
   {

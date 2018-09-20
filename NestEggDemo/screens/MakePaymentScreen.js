@@ -1,16 +1,16 @@
 import React from 'react';
 import { ExpoConfigView } from '@expo/samples';
-import { View, StyleSheet, Image, Text } from 'react-native';
-import ListComponent from '../components/ListComponent';
-const ActionList =  require('../config/ActionList').ActionList;
+import { View, StyleSheet } from 'react-native';
+import { Button } from 'react-native-elements';
+import MarqueeHeaderComponent from '../components/MarqueeHeaderComponent';
 
-export default class RentScreen extends React.Component {
+export default class MakePaymentScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: 'Manage Rent',
+      headerTitle: 'Make Payment',
       headerStyle: {
         backgroundColor: '#ffffff',
-        marginTop: -22
+        marginTop: -20
       }
     }
   };
@@ -22,11 +22,22 @@ export default class RentScreen extends React.Component {
     const username = navigation.getParam('username', 'Noah');
     return (
       <View style={styles.welcomeContainer}>
-        <ListComponent listObject={ActionList.Rent} />
+        <MarqueeHeaderComponent
+          title={'Your Next Payment is Due:'}
+          subTitle={'October 12'}
+        />
+        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+        <Button title='Pay Now'
+          borderRadius={100}
+          buttonStyle={{width: 160, height: 40, backgroundColor: '#24AC9B', marginTop: 20}}
+          color='#ffffff'
+        />
+        </View>
       </View>
     )
   }
 }
+
 
 const styles = StyleSheet.create({
   welcomeContainer: {

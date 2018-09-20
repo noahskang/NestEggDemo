@@ -1,11 +1,13 @@
 import React from 'react';
 import { ExpoConfigView } from '@expo/samples';
 import { View, StyleSheet, Image, Text } from 'react-native';
+import ListComponent from '../components/ListComponent';
+const ActionList =  require('../config/ActionList').ActionList;
 
 export default class ApplianceScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: 'View My Appliances',
+      headerTitle: 'Appliances',
       headerStyle: {
         backgroundColor: '#ffffff',
         marginTop: -20
@@ -20,7 +22,7 @@ export default class ApplianceScreen extends React.Component {
     const username = navigation.getParam('username', 'Noah');
     return (
       <View style={styles.welcomeContainer}>
-        <Text>hello {username}!</Text>
+        <ListComponent listObject={ActionList.Appliances} />
       </View>
     )
   }

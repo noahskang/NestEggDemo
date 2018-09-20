@@ -20,7 +20,6 @@ export default class LeaseScreen extends React.Component {
     const username = navigation.getParam('username', 'Noah');
     return (
       <View style={styles.welcomeContainer}>
-        <Text>hello {username}!</Text>
         <Text>Your Lease Information Will Appear Here</Text>
       </View>
     )

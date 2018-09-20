@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   marqueeTitle: {
     color: '#3C3C3B',
     fontFamily: 'AirbnbCereal-Bold',
-    fontSize: 24
+    fontSize: 22
   },
   marqueeSubtitle: {
     color: '#3C3C3B',

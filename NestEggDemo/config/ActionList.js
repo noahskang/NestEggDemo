@@ -12,7 +12,7 @@ export const ActionList = {
       },
       {
         name: 'View Maintenance History',
-        name: 'ReportProblem'
+        route: 'ReportProblem'
       },
     ]
   },
@@ -20,13 +20,16 @@ export const ActionList = {
     title: 'Rent',
     list: [
       {
-        name: 'Make a Payment'
+        name: 'Make a Payment',
+        route: 'MakePayment'
       },
       {
-        name: 'Manage Payment Options'
+        name: 'Manage Payment Options',
+        route: 'MakePayment'
       },
       {
-        name: 'View Payment History'
+        name: 'View Payment History',
+        route: 'MakePayment'
       }
     ]
   },
@@ -34,10 +37,25 @@ export const ActionList = {
     title: 'Utilities',
     list: [
       {
-        name: 'Set Up a New Service'
+        name: 'Set Up a New Service',
+        route: 'ReportProblem'
       },
       {
-        name: 'Manage Existing Services'
+        name: 'Manage Existing Services',
+        route: 'ReportProblem'
+      },
+    ]
+  },
+  'Appliances': {
+    title: 'Utilities',
+    list: [
+      {
+        name: 'Set Up a New Service',
+        route: 'ReportProblem'
+      },
+      {
+        name: 'Manage Existing Services',
+        route: 'ReportProblem'
       },
     ]
   }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { ExpoConfigView } from '@expo/samples';
 import { View, StyleSheet, Image, Text } from 'react-native';
+import ListComponent from '../components/ListComponent';
+const ActionList =  require('../config/ActionList').ActionList;
 
 export default class UtilitiesScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
@@ -20,7 +22,7 @@ export default class UtilitiesScreen extends React.Component {
     const username = navigation.getParam('username', 'Noah');
     return (
       <View style={styles.welcomeContainer}>
-        <Text>hello {username}!</Text>
+        <ListComponent listObject={ActionList.Utilities} />
       </View>
     )
   }

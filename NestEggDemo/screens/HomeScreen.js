@@ -33,11 +33,6 @@ export default class HomeScreen extends React.Component {
           <Image style={{bottom: 25}} source={require('../assets/images/apt-inside.png')} />
           <Text style={styles.manageApt}>Manage Your Apartment</Text>
           <CardList />
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-            </TouchableOpacity>
-          </View>
         </ScrollView>
 
       </View>
