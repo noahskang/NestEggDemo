@@ -1,6 +1,8 @@
 import React from 'react';
 import { ExpoConfigView } from '@expo/samples';
 import { View, StyleSheet, Image, Text } from 'react-native';
+import ListComponent from '../components/ListComponent';
+const ActionList =  require('../config/ActionList').ActionList;
 
 export default class MaintenanceScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
@@ -19,8 +21,8 @@ export default class MaintenanceScreen extends React.Component {
     const username = navigation.getParam('username', 'Noah');
     return (
       <View style={styles.welcomeContainer}>
-        <Text>This is Applications Window</Text>
-        <Text>hello {username}!</Text>
+        <ListComponent listObject={ActionList.Maintenance} />
+        <Image source={require('../assets/images/Hammer.png')} />
       </View>
     )
   }

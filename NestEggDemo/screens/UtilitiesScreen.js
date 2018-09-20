@@ -5,7 +5,7 @@ import { View, StyleSheet, Image, Text } from 'react-native';
 export default class UtilitiesScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: 'Report A Problem',
+      headerTitle: 'Manage Utilities',
       headerStyle: {
         backgroundColor: '#ffffff',
       }
@@ -19,7 +19,6 @@ export default class UtilitiesScreen extends React.Component {
     const username = navigation.getParam('username', 'Noah');
     return (
       <View style={styles.welcomeContainer}>
-        <Text>This is Applications Window</Text>
         <Text>hello {username}!</Text>
       </View>
     )

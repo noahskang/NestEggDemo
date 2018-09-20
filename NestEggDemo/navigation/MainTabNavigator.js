@@ -6,9 +6,9 @@ import { Icon } from 'react-native-elements';
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import ApplianceScreen from '../screens/ApplianceScreen';
-import MaintenanceScreen from '../screens/ApplianceScreen';
-import RentScreen from '../screens/ApplianceScreen';
-import UtilitiesScreen from '../screens/ApplianceScreen';
+import MaintenanceScreen from '../screens/MaintenanceScreen';
+import RentScreen from '../screens/RentScreen';
+import UtilitiesScreen from '../screens/UtilitiesScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import LogoTitle from '../components/LogoTitle';
@@ -17,9 +17,9 @@ const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
     Appliances: ApplianceScreen,
-    Maintenance: ApplianceScreen,
-    Rent: ApplianceScreen,
-    Utilities: ApplianceScreen
+    Maintenance: MaintenanceScreen,
+    Rent: RentScreen,
+    Utilities: UtilitiesScreen
   },
   {
     navigationOptions: {
